@@ -26,7 +26,7 @@
     "object-assign": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^0.13.1"
+    "react": "^0.14.1"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
