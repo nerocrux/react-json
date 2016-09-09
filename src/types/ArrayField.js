@@ -19,10 +19,13 @@ var ArrayField = React.createClass({
 	},
 
 	getStateFromProps: function( props ){
-		return {
+		var result = {
 			editing: props.settings.editing || false,
 			fields: this.state && this.state.fields || {}
 		};
+        if (Object.keys(result.fields).length === 0) {
+            result.fields = props.rootFields;
+        }
 	},
 
 	defaultValue: [],
@@ -54,6 +57,7 @@ var ArrayField = React.createClass({
 				fixed: fixed,
 				onUpdated: this.updateField,
 				onDeleted: this.deleteField,
+                rootFields: !this.props.rootFields || this.props.rootFields == 'undefined' ? this.state.fields : this.props.rootFields,
 				parentSettings: this.props.settings
 			}));
 		}

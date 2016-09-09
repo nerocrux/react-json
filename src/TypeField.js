@@ -30,6 +30,7 @@ var TypeField = React.createClass({
 		return React.createElement( Component, {
 			value: this.props.value,
 			settings: settings,
+            rootFields: this.props.rootFields,
 			onUpdated: this.props.onUpdated,
 			id: this.props.id,
 			ref: 'field'

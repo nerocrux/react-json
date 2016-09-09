@@ -75,6 +75,7 @@ var Field = React.createClass({
 			type: type,
 			value: this.props.value,
 			settings: settings,
+            rootFields: this.props.rootFields,
 			onUpdated: this.onUpdated,
 			ref: 'typeField',
 			id: id,
