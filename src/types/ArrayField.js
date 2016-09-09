@@ -26,6 +26,7 @@ var ArrayField = React.createClass({
         if (Object.keys(result.fields).length === 0) {
             result.fields = props.rootFields;
         }
+        return result;
 	},
 
 	defaultValue: [],
