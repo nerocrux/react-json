@@ -33,13 +33,13 @@ var SelectType = React.createClass({
 		if( !opts || !opts.length )
 			return options;
 
-		opts.forEach( function( opt ){
+		opts.forEach( function( opt, i ){
 			var data = opt;
 			if( typeof opt != 'object' )
 				data = { value: opt, label: opt };
 
 			options.push(
-				React.DOM.option({value: data.value}, data.label)
+				React.DOM.option({value: data.value, key: i}, data.label)
 			);
 		});
 
