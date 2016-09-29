@@ -77,6 +77,10 @@ var Field = React.createClass({
         }
         settings['readOnly'] = readOnly;
 
+        if (typeof(this.props.rootFields[name]) != 'undefined' && this.props.rootFields[name].dateTime) {
+            settings['dateTime'] = true;
+        }
+
 		component = React.createElement( TypeField, {
 			type: type,
 			value: this.props.value,

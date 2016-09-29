@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var moment = require('moment');
 
 module.exports = {
 	getStateFromProps: function( props ){
@@ -15,6 +16,10 @@ module.exports = {
 
 		if( !this.state.editing )
 			return React.DOM.span( {onClick: this.setEditMode, className: className, readOnly: this.props.settings.readOnly}, this.getDisplayString() );
+
+        if (this.props.settings.dateTime) {
+            this.inputType = 'datetime-local';
+        }
 
 		return React.DOM.input({
 			type: this.inputType,
