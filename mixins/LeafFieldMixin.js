@@ -14,11 +14,12 @@ module.exports = {
 		var className = this.typeClass;
 
 		if( !this.state.editing )
-			return React.DOM.span( {onClick: this.setEditMode, className: className}, this.getDisplayString() );
+			return React.DOM.span( {onClick: this.setEditMode, className: className, readOnly: this.props.settings.readOnly}, this.getDisplayString() );
 
 		return React.DOM.input({
 			type: this.inputType,
 			value: this.state.value,
+			readOnly: this.props.settings.readOnly,
 			id: this.props.id,
 			placeholder: this.props.settings.placeholder || '',
 			onChange: this.updateValue,

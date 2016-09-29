@@ -35,7 +35,7 @@ var Field = React.createClass({
 		if( type == 'react' )
 			return this.renderReactField( definition );
 
-		typeField = this.renderTypeField( type, id );
+		typeField = this.renderTypeField( type, id, this.props.name );
 
 		className += ' ' + type + 'Field';
 
@@ -62,7 +62,7 @@ var Field = React.createClass({
 		]);
 	},
 
-	renderTypeField: function( type, id ){
+	renderTypeField: function( type, id, name ){
 		var definition = this.props.definition,
 			settings = objectAssign( {}, definition.settings || {} ),
 			component
@@ -70,6 +70,12 @@ var Field = React.createClass({
 
 		if( definition.fields )
 			settings.fields = definition.fields;
+
+        var readOnly = false;
+        if (typeof(this.props.rootFields[name]) != 'undefined' && 'readOnly' in this.props.rootFields[name]) {
+            readOnly = this.props.rootFields[name].readOnly;
+        }
+        settings['readOnly'] = readOnly;
 
 		component = React.createElement( TypeField, {
 			type: type,
