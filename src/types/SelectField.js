@@ -23,6 +23,7 @@ var SelectType = React.createClass({
             {
                 value: this.props.value,
                 options: options,
+                disabled: this.props.settings.readOnly,
                 onChange: this.updateValue
             }
         );
