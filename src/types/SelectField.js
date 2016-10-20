@@ -1,4 +1,6 @@
 var React = require('react');
+var Select = require('react-select');
+require('react-select/dist/react-select.css');
 
 /**
  * Component for editing a boolean.
@@ -15,15 +17,20 @@ var SelectType = React.createClass({
 	},
 
 	render: function(){
-		var className = 'jsonSelect';
-
-		return React.DOM.select({
-			className: className,
-			id: this.props.id,
-			value: this.props.value,
-			onChange: this.updateValue
-		}, this.renderOptions() );
+        var options = this.renderOptions();
+        return React.createElement(
+            Select,
+            {
+                value: this.props.value,
+                options: options,
+                onChange: this.updateValue
+            }
+        );
 	},
+
+    optionRenderer: function(option) {
+        return React.createElement(Highlighter, {});
+    },
 
 	renderOptions: function(){
 		var opts = this.props.settings.options,
@@ -39,15 +46,15 @@ var SelectType = React.createClass({
 				data = { value: opt, label: opt };
 
 			options.push(
-				React.DOM.option({value: data.value, key: i}, data.label)
+				{value: data.value, label: data.label, key: i}
 			);
 		});
 
 		return options;
 	},
 
-	updateValue: function( e ){
-		this.props.onUpdated( e.target.value );
+	updateValue: function(e){
+		this.props.onUpdated(e.value);
 	},
 
 	componentWillReceiveProps: function( nextProps ){
