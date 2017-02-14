@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arqex/react-json.git"
+    "url": "https://git.gree-dev.net/toybox/react-json"
   },
   "keywords": [
     "react",
@@ -18,9 +18,9 @@
   "author": "Javier Marquez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arqex/react-json/issues"
+    "url": "https://git.gree-dev.net/toybox/react-json/issues"
   },
-  "homepage": "https://github.com/arqex/react-json",
+  "homepage": "https://git.gree-dev.net/toybox/react-json",
   "dependencies": {
     "react-select": "^1.0.0-rc.2",
     "freezer-js": "^0.5.2",
