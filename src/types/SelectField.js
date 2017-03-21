@@ -37,6 +37,7 @@ var SelectType = React.createClass({
 		var opts = this.props.settings.options,
 			options = []
 		;
+        options.push({value: 0, label: 'DELETE (set value to 0)', key: -1});
 
 		if( !opts || !opts.length )
 			return options;
