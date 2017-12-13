@@ -1,6 +1,7 @@
 var React = require('react'),
     createReactClass = require('create-react-class'),
     PropTypes = require('prop-types'),
+    DOM = require('react-dom-factories'),
 	Freezer = require('freezer-js'),
 	objectAssign = require('object-assign'),
 	TypeField = require('./src/TypeField'),
@@ -114,7 +115,7 @@ var Json = createReactClass({
 			className = 'jsonEditor' + flexboxClass
 		;
 
-		return React.DOM.div({ className: className }, ob);
+		return DOM.div({ className: className }, ob);
 	},
 
 	getValue: function(){

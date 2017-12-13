@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+    DOM = require('react-dom-factories'),
 	Field = require('../Field'),
     createReactClass = require('create-react-class'),
 	assign = require('object-assign'),
@@ -69,9 +70,9 @@ var ArrayField = createReactClass({
 			openArrayChildren.push( this.renderAdder( this.props.value.length ) );
 		}
 
-		openArray = React.DOM.div({ key:'o', className: 'jsonChildren' }, openArrayChildren );
+		openArray = DOM.div({ key:'o', className: 'jsonChildren' }, openArrayChildren );
 
-		return React.DOM.span({className: className}, [
+		return DOM.span({className: className}, [
 			this.renderHeader(),
 			openArray
 		]);

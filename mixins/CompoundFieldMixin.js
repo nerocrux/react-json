@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+    DOM = require('react-dom-factories'),
 	FieldAdder = require('../src/FieldAdder'),
 	assign = require('object-assign')
 ;
@@ -25,7 +26,7 @@ module.exports = {
 			header = settingsHeader;
 		}
 
-		return React.DOM.span({ key: 's', onClick: this.toggleEditing, className: 'compoundToggle' }, header);
+		return DOM.span({ key: 's', onClick: this.toggleEditing, className: 'compoundToggle' }, header);
 	},
 
 	toggleEditing: function(){

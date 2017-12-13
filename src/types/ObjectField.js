@@ -2,6 +2,7 @@
 
 var React = require('react'),
     createReactClass = require('create-react-class'),
+    DOM = require('react-dom-factories'),
 	Field = require('../Field'),
 	assign = require('object-assign'),
 	CompoundFieldMixin = require('../../mixins/CompoundFieldMixin')
@@ -59,8 +60,8 @@ var ObjectField = createReactClass({
 			openHashChildren.push( this.renderAdder() );
 		}
 
-		openHash = React.DOM.div({ key: 'o', className: 'jsonChildren'}, openHashChildren);
-		return React.DOM.span({className: className}, [
+		openHash = DOM.div({ key: 'o', className: 'jsonChildren'}, openHashChildren);
+		return DOM.span({className: className}, [
 			this.renderHeader(),
 			openHash
 		]);
@@ -99,7 +100,7 @@ var ObjectField = createReactClass({
 			fields.push( me.renderField( field, fixedFields ) );
 		});
 
-		return React.DOM.div({ className: 'jsonGroup jsonGroup_' + groupNumber }, fields );
+		return DOM.div({ className: 'jsonGroup jsonGroup_' + groupNumber }, fields );
 	},
 
 	getDefaultHeader: function(){

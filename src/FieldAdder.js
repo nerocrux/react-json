@@ -1,5 +1,6 @@
 var React = require('react'),
     createReactClass = require('create-react-class'),
+    DOM = require('react-dom-factories'),
 	TypeField = require('./TypeField')
 ;
 
@@ -20,31 +21,31 @@ var FieldAdder = createReactClass({
 
 	render: function(){
 		if( !this.state.creating )
-			return React.DOM.a({ className: 'jsonAdd', href: '#', onClick: this.handleCreate }, this.props.text );
+			return DOM.a({ className: 'jsonAdd', href: '#', onClick: this.handleCreate }, this.props.text );
 
 		var options = this.getTypes().map( function( type ){
-				return React.DOM.option({value: type, key: type}, type[0].toUpperCase() + type.slice(1));
+				return DOM.option({value: type, key: type}, type[0].toUpperCase() + type.slice(1));
 			}),
 			fieldName
 		;
 
 		if( typeof this.props.name != 'undefined' )
 			fieldName =  [
-				React.DOM.span({className: 'jsonName'}, this.props.name),
-				React.DOM.span(null, ':')
+				DOM.span({className: 'jsonName'}, this.props.name),
+				DOM.span(null, ':')
 			];
 		else {
 			fieldName = [
-				React.DOM.input({ref: 'keyInput', type: 'text', value: this.state.value, onChange: this.changeKey}),
-				React.DOM.span(null, ':')
+				DOM.input({ref: 'keyInput', type: 'text', value: this.state.value, onChange: this.changeKey}),
+				DOM.span(null, ':')
 			];
 		}
 
-		return React.DOM.div( {className: 'jsonField jsonFieldAdder'}, [
+		return DOM.div( {className: 'jsonField jsonFieldAdder'}, [
 			fieldName,
-			React.DOM.select({ key: 's', value: this.state.type, onChange: this.changeType, ref: 'typeSelector'}, options),
-			React.DOM.button({ key: 'b', onClick: this.createField }, 'OK' ),
-			React.DOM.a({ key: 'a', href: '#', className: 'cancelField', onClick: this.handleCancel}, 'Cancel')
+			DOM.select({ key: 's', value: this.state.type, onChange: this.changeType, ref: 'typeSelector'}, options),
+			DOM.button({ key: 'b', onClick: this.createField }, 'OK' ),
+			DOM.a({ key: 'a', href: '#', className: 'cancelField', onClick: this.handleCancel}, 'Cancel')
 		]);
 	},
 

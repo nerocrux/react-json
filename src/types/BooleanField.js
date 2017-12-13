@@ -1,5 +1,6 @@
 var React = require('react'),
-    createReactClass = require('create-react-class');
+    createReactClass = require('create-react-class'),
+    DOM = require('react-dom-factories');
 
 /**
  * Component for editing a boolean.
@@ -12,7 +13,7 @@ var BooleanField = createReactClass({
 	render: function(){
 		var className = 'jsonBoolean';
 
-		return React.DOM.input({
+		return DOM.input({
 			type: "checkbox",
 			className: className,
 			id: this.props.id,

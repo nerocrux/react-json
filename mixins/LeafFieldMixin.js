@@ -1,6 +1,7 @@
 'use strict';
 
-var React = require('react');
+var React = require('react'),
+    DOM = require('react-dom-factories');
 var moment = require('moment');
 
 module.exports = {
@@ -15,13 +16,13 @@ module.exports = {
 		var className = this.typeClass;
 
 		if( !this.state.editing )
-			return React.DOM.span( {onClick: this.setEditMode, className: className, readOnly: this.props.settings.readOnly}, this.getDisplayString() );
+			return DOM.span( {onClick: this.setEditMode, className: className, readOnly: this.props.settings.readOnly}, this.getDisplayString() );
 
         if (this.props.settings.dateTime) {
             this.inputType = 'datetime-local';
         }
 
-		return React.DOM.input({
+		return DOM.input({
 			type: this.inputType,
 			value: this.state.value,
 			readOnly: this.props.settings.readOnly,
@@ -39,7 +40,7 @@ module.exports = {
 			return this.getDisplayModeString();
 
 		if( this.props.value === '' )
-			return React.DOM.span( {className: 'jsonNovalue'}, 'No value' );
+			return DOM.span( {className: 'jsonNovalue'}, 'No value' );
 
 		return this.props.value;
 	},
