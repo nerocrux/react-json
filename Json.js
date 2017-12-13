@@ -1,4 +1,5 @@
 var React = require('react'),
+    createReactClass = require('create-react-class'),
     PropTypes = require('prop-types'),
 	Freezer = require('freezer-js'),
 	objectAssign = require('object-assign'),
@@ -33,7 +34,7 @@ if( flexboxClass ){
  * @prop  {Object|FreezerNode} value The JSON object, value of the form.
  * @prop  {Object} settings Customization settings
  */
-var Json = React.createClass({
+var Json = createReactClass({
 
 	getDefaultProps: function(){
 		return {

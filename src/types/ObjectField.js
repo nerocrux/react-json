@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+    createReactClass = require('create-react-class'),
 	Field = require('../Field'),
 	assign = require('object-assign'),
 	CompoundFieldMixin = require('../../mixins/CompoundFieldMixin')
@@ -11,7 +12,7 @@ var React = require('react'),
  * @param  {FreezerNode} value The value of the object.
  * @param  {Mixed} original The value of the component it the original json.
  */
-var ObjectField = React.createClass({
+var ObjectField = createReactClass({
 	mixins: [CompoundFieldMixin],
 
 	getInitialState: function(){
