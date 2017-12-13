@@ -1,4 +1,5 @@
 var React = require('react'),
+    createReactClass = require('create-react-class'),
 	LeafMixin = require('../../mixins/LeafFieldMixin')
 ;
 
@@ -9,7 +10,7 @@ var React = require('react'),
  * @param  {Mixed} original The value of the component it the original json.
  * @param {FreezerNode} parent The parent node to let the string component update its value.
  */
-var StringField = React.createClass({
+var StringField = createReactClass({
 	mixins: [LeafMixin],
 	typeClass: 'jsonString',
 	inputType: 'text',

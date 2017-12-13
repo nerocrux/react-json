@@ -1,4 +1,5 @@
 var React = require('react'),
+    createReactClass = require('create-react-class'),
 	TypeField = require('./TypeField')
 ;
 
@@ -8,7 +9,7 @@ var React = require('react'),
  * @param  {string} name Optional. If provided, the attribute added will have that key (arrays).
  *                           Otherwise an input will be shown to let the user define the key.
  */
-var FieldAdder = React.createClass({
+var FieldAdder = createReactClass({
 	getInitialState: function(){
 		return {
 			creating: this.props.creating || false,

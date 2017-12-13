@@ -2,6 +2,7 @@
 
 var React = require('react'),
 	Field = require('../Field'),
+    createReactClass = require('create-react-class'),
 	assign = require('object-assign'),
 	CompoundFieldMixin = require('../../mixins/CompoundFieldMixin')
 ;
@@ -11,7 +12,7 @@ var React = require('react'),
  * @param  {FreezerNode} value The value of the array.
  * @param  {Mixed} original The value of the component it the original json.
  */
-var ArrayField = React.createClass({
+var ArrayField = createReactClass({
 	mixins: [CompoundFieldMixin],
 
 	getInitialState: function(){

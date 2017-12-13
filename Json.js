@@ -1,4 +1,5 @@
 var React = require('react'),
+    PropTypes = require('prop-types'),
 	Freezer = require('freezer-js'),
 	objectAssign = require('object-assign'),
 	TypeField = require('./src/TypeField'),
@@ -43,7 +44,7 @@ var Json = React.createClass({
 	},
 
 	childContextTypes: {
-		typeDefaults: React.PropTypes.object
+		typeDefaults: PropTypes.object
 	},
 
 	getChildContext: function(){
