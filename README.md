@@ -1,3 +1,15 @@
+# Forked from arqex/react-json
+https://github.com/arqex/react-json
+
+# What is added / changed compare to the original react-json?
+
+* Support Reactjs v16
+* Support Datetime Field
+* Use react-select for Select Field
+* Other minor features and changes
+
+---
+
 # react-json
 A JSON editor packed as a React.js component, but also the simplest way of creating web forms.
 
