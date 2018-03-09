@@ -1,26 +1,26 @@
 {
-  "name": "react-json",
+  "name": "react-json-2",
   "version": "0.0.10",
-  "description": "A JSON editor packed as a React.js component and the simplest way of creating web forms.",
+  "description": "A JSON editor packed as a React.js component and the simplest way of creating web forms. Forked from react-json.",
   "main": "Json.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.gree-dev.net/toybox/react-json"
+    "url": "https://github.com/nerocrux/react-json"
   },
   "keywords": [
     "react",
     "forms",
     "json"
   ],
-  "author": "Javier Marquez",
+  "author": "Peichao Yu",
   "license": "MIT",
   "bugs": {
-    "url": "https://git.gree-dev.net/toybox/react-json/issues"
+    "url": "https://github.com/nerocrux/react-json/issues"
   },
-  "homepage": "https://git.gree-dev.net/toybox/react-json",
+  "homepage": "https://github.com/nerocrux/react-json",
   "dependencies": {
     "react-select": "^1.0.0-rc.5",
     "freezer-js": "^0.5.2",
@@ -36,5 +36,9 @@
     "jsdom": "^3.1.2",
     "mocha": "^2.2.4",
     "node-libs-browser": "^0.5.2"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }
