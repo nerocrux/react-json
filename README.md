@@ -8,6 +8,10 @@ https://github.com/arqex/react-json
 * Use react-select for Select Field
 * Other minor features and changes
 
+# Installation
+
+> npm install react-json-1
+
 ---
 
 # react-json
